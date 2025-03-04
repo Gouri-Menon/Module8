@@ -25,6 +25,9 @@ const Sidebar = ({ showSidebar, setActivePage, setResetForm }) => {
   const handleMarksClick = () => {
     handleLinkClick('marks');
   };
+  const handleCertificateClick = () => {
+    handleLinkClick('certificate');
+  }
 
   return (
     <div className={`${showSidebar ? "block" : "hidden"} w-64 bg-[#002147] fixed h-full px-2`}>
@@ -61,7 +64,7 @@ const Sidebar = ({ showSidebar, setActivePage, setResetForm }) => {
         </li>
 
         <li className={`mb-2 rounded py-2 ${activeLink === 'certificate' ? 'bg-[#4A90E2]' : 'hover:bg-[#4A90E2]'}`}>
-          <a href='#' className='px-3 flex items-center' onClick={() => handleLinkClick('certificate')}>
+          <a href='#' className='px-3 flex items-center' onClick={() => handleCertificateClick('certificate')}>
             <PiCertificateFill className='inline-block w-6 h-5 mr-2 -mt-2' />Certificate
           </a>
         </li>

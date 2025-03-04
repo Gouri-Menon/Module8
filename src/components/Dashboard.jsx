@@ -3,12 +3,14 @@ import Navbar from './Navbar';
 import ExamRegistration from './ExamRegistration';
 import Attendance from './Attendance';
 import Marks from './Marks';
+import Certificate from './Certificate';
 
 const Dashboard = ({ showSidebar, setShowSidebar, activePage, setActivePage }) => {
   const [showExamRegistration, setShowExamRegistration] = useState(true); 
   const [resetForm, setResetForm] = useState(false);
   const [showAttendance, setShowAttendance] = useState(true);
   const [showMarks, setShowMarks] = useState(true);
+  const [showCertificate, setShowCertificate] = useState(true);
 
   const handleExamRegistrationClick = () => {
     if (showExamRegistration) {
@@ -32,6 +34,14 @@ const Dashboard = ({ showSidebar, setShowSidebar, activePage, setActivePage }) =
       setActivePage('dashboard'); 
     } else {
       setShowMarks(true);
+    }
+  };
+
+  const handleCertificateClick= () => {
+    if (showCertificate) {
+      setActivePage('dashboard'); 
+    } else {
+      setShowCertificate(true);
     }
   };
 
@@ -60,6 +70,12 @@ const Dashboard = ({ showSidebar, setShowSidebar, activePage, setActivePage }) =
             {showMarks && <Marks />}
           </div>
         )}
+        {activePage === 'certificate' && (
+          <div className="h-screen" onClick={handleCertificateClick}>
+            {showCertificate && <Certificate />}
+          </div>
+        )}
+
 
       </div>
     </div>

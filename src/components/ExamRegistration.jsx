@@ -16,7 +16,7 @@ const ExamRegistration = ({ resetForm, setResetForm }) => {
         name: '',
         email: '',
         doe: '',
-        subject: ''
+        exam: ''
       });
       setErrors({});
       setResetForm(false); 
@@ -39,7 +39,7 @@ const ExamRegistration = ({ resetForm, setResetForm }) => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Email is invalid';
     }
-    if (!formData.dob) newErrors.dob = 'Date of Birth is required';
+    if (!formData.doe) newErrors.doe = 'Date of Exam is required';
     if (!formData.exam) newErrors.exam = 'Exam is required';
     return newErrors;
   };
@@ -56,7 +56,7 @@ const ExamRegistration = ({ resetForm, setResetForm }) => {
         name: '',
         email: '',
         doe: '',
-        subject: ''
+        exam: ''
       });
       setErrors({});
     }
@@ -94,23 +94,28 @@ const ExamRegistration = ({ resetForm, setResetForm }) => {
           <label className="block text-gray-700 font-semibold mb-2">Date of Exam</label>
           <input
             type="date"
-            name="date of exam"
-            value={formData.dob}
+            name="doe"
+            value={formData.doe}
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {errors.dob && <p className="text-red-500 text-sm">{errors.dob}</p>}
+          {errors.doe && <p className="text-red-500 text-sm">{errors.doe}</p>}
         </div>
         <div>
           <label className="block text-gray-700 font-semibold mb-2">Subject</label>
-          <input
-            type="text"
-            name="subject"
+          <select
+            name="exam"
             value={formData.exam}
             onChange={handleChange}
-            maxLength="50"
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          >
+            <option value="">Select a subject</option>
+            <option value="Math">Math</option>
+            <option value="Science">Science</option>
+            <option value="History">History</option>
+            <option value="Geography">Geography</option>
+            <option value="English">English</option>
+          </select>
           {errors.exam && <p className="text-red-500 text-sm">{errors.exam}</p>}
         </div>
         <button type="submit" className="w-full py-3 bg-[#002147] text-white font-semibold rounded-lg hover:bg-[#4A90E2] transition duration-300">

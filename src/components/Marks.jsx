@@ -4,7 +4,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const Marks = ({ studentName }) => {
+const Marks = () => {
   const marksData = [
     { subject: 'Math', marks: 85 },
     { subject: 'Science', marks: 90 },
@@ -31,7 +31,7 @@ const Marks = ({ studentName }) => {
     responsive: true,
     plugins: {
       legend: { position: 'top' },
-      title: { display: true, text: `Marks of ${studentName}` },
+      title: { display: true, text: 'Marks in each Subject' },
     },
     scales: {
       x: {
