@@ -3,14 +3,20 @@ import { MdDashboard } from 'react-icons/md';
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import { FaUserGraduate } from "react-icons/fa";
 import { PiCertificateFill } from "react-icons/pi";
+import { PiExamFill } from "react-icons/pi";
+
 
 const Sidebar = ({ showSidebar, setActivePage, setResetForm }) => {
   const [showDashboardDropdown, setShowDashboardDropdown] = useState(false);
-  const [activeLink, setActiveLink] = useState(''); 
+  const [activeLink, setActiveLink] = useState('');
 
   const handleLinkClick = (page) => {
     setActivePage(page);
     setActiveLink(page);
+  };
+
+  const handleDashboardClick = () => {
+    handleLinkClick('dashboard');
   };
 
   const handleExamRegistrationClick = () => {
@@ -37,19 +43,21 @@ const Sidebar = ({ showSidebar, setActivePage, setResetForm }) => {
       <hr />
       <ul className='text-white bg-[#002147] font-bold'>
         <li className={`mb-2 rounded py-2 ${activeLink === 'dashboard' ? 'bg-[#4A90E2]' : 'hover:bg-[#4A90E2]'}`}>
-          <a href='#' className='px-3 flex items-center' onClick={() => setShowDashboardDropdown(!showDashboardDropdown)}>
+          <a href='#' className='px-3 flex items-center' onClick={handleDashboardClick}>
             <MdDashboard className='inline-block w-6 h-5 mr-2 -mt-2' />Dashboard
           </a>
-          {showDashboardDropdown && (
-            <ul className='ml-4'>
-              <li className={`mb-2 mr-2 rounded py-2 ${activeLink === 'examRegistration' ? 'bg-[#4A90E2] text-white' : 'bg-white text-[#002147] '}`}>
-                <a href='#' className='px-3' onClick={handleExamRegistrationClick}>
-                  Exam Registration
-                </a>
-              </li>
-            </ul>
-          )}
         </li>
+
+
+
+        <li className={`mb-2 rounded py-2 ${activeLink === 'examRegistration' ? 'bg-[#4A90E2]' : 'hover:bg-[#4A90E2]'}`}>
+          <a href='#' className='px-3 flex items-center' onClick={handleExamRegistrationClick}>
+            <PiExamFill className='inline-block w-6 h-5 mr-2 -mt-2' />Exam Registration
+          </a>
+        </li>
+
+
+
 
         <li className={`mb-2 rounded py-2 ${activeLink === 'attendance' ? 'bg-[#4A90E2]' : 'hover:bg-[#4A90E2]'}`}>
           <a href='#' className='px-3 flex items-center' onClick={handleAttendanceClick}>
