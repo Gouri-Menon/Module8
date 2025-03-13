@@ -5,7 +5,7 @@ const Navbar = ({ showSidebar, setShowSidebar }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleBellClick = () => {
-    alert('No new notifications');
+    alert('No new notifications!');
   };
 
   const handleUserIconClick = () => {
@@ -16,7 +16,7 @@ const Navbar = ({ showSidebar, setShowSidebar }) => {
     <nav className='bg-[#002147] flex justify-between items-center px-4 py-3 w-full' >
       <div className='text-xl flex items-center'>
         <FaBars className='text-white me-4 cursor-pointer w-full' onClick={() => setShowSidebar(!showSidebar)} />
-        <span className='text-white font-semibold'>Home</span>
+        <span className='text-white font-semibold'>EduTech</span>
       </div>
       <div className='flex items-center'>
         <div className='text-white me-4'>

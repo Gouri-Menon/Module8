@@ -35,7 +35,7 @@ const Certificate = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-md shadow-2xl border-2 border-blue-200 bg-white rounded-lg">
+      <div className="w-full max-w-md shadow-2xl border-2 border-blue-200 bg-white rounded-lg mt-0">
         <div className="bg-[#002147] text-white rounded-t-lg p-4">
           <h2 className="text-2xl font-bold text-center flex items-center justify-center">
             Certificate 
@@ -86,13 +86,11 @@ const Certificate = () => {
               ref={certificateRef} 
               className="certificate bg-white border-4 border-blue-600 p-8 text-center relative rounded-lg shadow-lg"
             >
-              {/* Decorative Corner Elements */}
               <div className="absolute top-0 left-0 w-16 h-16 border-l-4 border-t-4 border-blue-600 rounded-tl-lg"></div>
               <div className="absolute top-0 right-0 w-16 h-16 border-r-4 border-t-4 border-blue-600 rounded-tr-lg"></div>
               <div className="absolute bottom-0 left-0 w-16 h-16 border-l-4 border-b-4 border-blue-600 rounded-bl-lg"></div>
               <div className="absolute bottom-0 right-0 w-16 h-16 border-r-4 border-b-4 border-blue-600 rounded-br-lg"></div>
 
-              {/* Background Watermark */}
               <div 
                 className="absolute inset-0 opacity-10 bg-blue-500 z-0"
                 style={{
